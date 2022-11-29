@@ -63,7 +63,7 @@ function revealsusconnection(){
 function printwebpageinfo(){
 	echo "Enter domain name"
 	read -p "> " domain
-	whois $domain
+	whois $domain | grep -v Invalid | grep -v '%'
 }
 function portconnect(){
 	echo "Enter IP Address"
